@@ -3,8 +3,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-
-data = pickle.load(open('Customer_Churn.pkl','rb'))
+import zipfile
+with zipfile.ZipFile('Customer_Churn.zip'.'r') as zip_ref:
+                     zip_ref.extractall()
+                    data = pickle.load(open('Customer_Churn.pkl','rb'))
+                                            
 model = data['model']
 ct = data['ct']
 
